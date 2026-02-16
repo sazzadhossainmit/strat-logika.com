@@ -42,11 +42,13 @@ The website is fully functional, responsive, and production-ready.
 
 ## Project Structure
 
+```
 /root
 │── index.html
 │── style.css
 │── main.js
 │── /images
+```
 
 
 ---

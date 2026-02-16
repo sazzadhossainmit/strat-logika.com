@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strat Logika | Industrial Solutions</title>
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <div class="top-info">
+          <a href="tel:+447419293015"><i data-lucide="phone"></i> +44 74192 93015</a>
+          <a href="mailto:info@strat-logika.com"><i data-lucide="mail"></i> info@strat-logika.com</a>
+        </div>
+        <div class="top-certs">
+          ISO 9001 | ISO 14001 | OHSAS 18001 Certified
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <img src="images/stratlogika-logo.png" alt="">
+        </a>
+
+        <nav>
+          <div class="nav-item"><a href="#" class="nav-link active">Home</a></div>
+          <div class="nav-item"><a href="#about" class="nav-link">About Us</a></div>
+          <div class="nav-item">
+            <a href="#services" class="nav-link">Services <i data-lucide="chevron-down"></i></a>
+            <!-- Mega Menu -->
+            <div class="mega-menu">
+              <div class="mega-column">
+                <div class="mega-section">
+                  <h3 class="mega-title">Renewable Energy</h3>
+                  <ul class="mega-links">
+                    <li><a href="#services" onclick="openService('renewable')">Solar Power Systems</a></li>
+                    <li><a href="#services" onclick="openService('renewable')">Wind Energy Solutions</a></li>
+                    <li><a href="#services" onclick="openService('renewable')">Energy Storage</a></li>
+                    <li><a href="#services" onclick="openService('renewable')">Grid Integration</a></li>
+                  </ul>
+                </div>
+                <div class="mega-section">
+                  <h3 class="mega-title">Drilling Operations</h3>
+                  <ul class="mega-links">
+                    <li><a href="#services" onclick="openService('drilling')">Offshore Drilling</a></li>
+                    <li><a href="#services" onclick="openService('drilling')">Onshore Operations</a></li>
+                    <li><a href="#services" onclick="openService('drilling')">Well Services</a></li>
+                    <li><a href="#services" onclick="openService('drilling')">Drilling Equipment</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mega-column">
+                <div class="mega-section">
+                  <h3 class="mega-title">Waste Management</h3>
+                  <ul class="mega-links">
+                    <li><a href="#services" onclick="openService('waste')">Industrial Waste Processing</a></li>
+                    <li><a href="#services" onclick="openService('waste')">Recycling Solutions</a></li>
+                    <li><a href="#services" onclick="openService('waste')">Hazardous Waste Disposal</a></li>
+                    <li><a href="#services" onclick="openService('waste')">Waste-to-Energy</a></li>
+                  </ul>
+                </div>
+                <div class="mega-section">
+                  <h3 class="mega-title">Vessel Supplies</h3>
+                  <ul class="mega-links">
+                    <li><a href="#services" onclick="openService('vessel')">Marine Equipment</a></li>
+                    <li><a href="#services" onclick="openService('vessel')">Deck Supplies</a></li>
+                    <li><a href="#services" onclick="openService('vessel')">Safety Equipment</a></li>
+                    <li><a href="#services" onclick="openService('vessel')">Logistics Support</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item"><a href="#projects" class="nav-link">Projects</a></div>
+          <div class="nav-item"><a href="#industries" class="nav-link">Industries</a></div>
+          <a href="#" class="contact-btn" onclick="toggleModal(true)">Contact Us</a>
+        </nav>
+
+        <div class="menu-toggle" id="open-menu">
+          <i data-lucide="menu"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-header">
+      <a href="#" class="logo">
+        <img src="images/stratlogika-logo.png" alt="">
+      </a>
+      <div class="menu-toggle" id="close-menu">
+        <i data-lucide="x"></i>
+      </div>
+    </div>
+    <div class="mobile-menu-content">
+      <a href="#" onclick="closeMobileNav()">Home</a>
+      <a href="#about" onclick="closeMobileNav()">About Us</a>
+      <a href="#services" onclick="closeMobileNav()">Services</a>
+      <a href="#projects" onclick="closeMobileNav()">Projects</a>
+      <a href="#industries" onclick="closeMobileNav()">Industries</a>
+      <a onclick="closeMobileNav(); toggleModal(true)" class="contact-btn">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-overlay" id="contact-modal" onclick="closeOnOverlay(event)">
+
+    <div class="modal-container">
+      <button class="close-modal" onclick="toggleModal(false)"><i data-lucide="x"></i></button>
+      <!-- Sidebar -->
+      <aside class="modal-sidebar">
+        <div class="sidebar-header">
+          <h2>Get In Touch</h2>
+          <p>Ready to discuss your project? Our team is here to help.</p>
+        </div>
+
+        <div class="contact-info-list">
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="phone"></i></div>
+            <div class="info-text">
+              <strong>Phone</strong>
+              <a href="tel:+447419293015"><span>+44 74192 93015</span></a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="message-circle"></i></div>
+            <div class="info-text">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/+447550404652"><span>+44 75504 04652</span></a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="mail"></i></div>
+            <div class="info-text">
+              <strong>Email</strong>
+              <a href="mailto:info@strat-logika.com"><span>info@strat-logika.com</span></a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="map-pin"></i></div>
+            <div class="info-text">
+              <strong>Headquarters</strong>
+              <a href="https://maps.app.goo.gl/83mE48qD3ak5cxag8" target="_blank"><span>Unit 1, South Wellheads Industrial Centre<br> Wellheads Industrial Crescent, Dyce<br> Aberdeen AB21 7GA</span></a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i data-lucide="clock"></i></div>
+            <div class="info-text">
+              <strong>Business Hours</strong>
+              <span>Mon - Fri: 8:00 AM - 6:00 PM<br>24/7 Emergency Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="global-offices-tags">
+          <h4>Global Offices</h4>
+          <div class="tags-wrap">
+            <span class="tag">Scotland</span>
+            <span class="tag">London</span>
+            <span class="tag">Dubai</span>
+            <span class="tag">Singapore</span>
+            <span class="tag">Lagos</span>
+            <span class="tag">Tema</span>
+            <span class="tag">Dar es Salaam</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Form Content -->
+      <div class="modal-form-content">
+
+        <div class="form-header">
+          <h3>Send Us a Message</h3>
+          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
+
+        <form action="https://formspree.io/f/xgozljoy" method="POST" class="contact-form"
+          onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="name" placeholder="John Smith" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="john@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" name="company" placeholder="Your Company">
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+44 74192 93015">
+          </div>
+
+          <div class="form-group full">
+            <label>Service Interest *</label>
+            <select name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="renewable-energy">Renewable Energy</option>
+              <option value="waste-management">Waste Management</option>
+              <option value="drilling-operations">Drilling Operations</option>
+              <option value="vessel-supplies">Vessel Supplies</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label>Message *</label>
+            <textarea name="message" rows="4" placeholder="Tell us about your project requirements..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i data-lucide="send"></i> Send Message
+          </button>
+
+          <p class="form-footer-text">
+            By submitting this form, you agree to our Privacy Policy and Terms of Service.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <div class="slide-bg"
+        style="background-image: url('images/Powering-Sustainable-Industrial-Solutions.jpg');">
+      </div>
+      <div class="hero-content">
+        <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
+        <h2>Powering Sustainable Industrial Solutions</h2>
+        <p class="subtitle">Across Energy, Environment & Marine Operations</p>
+        <p class="description">Strat-Logika delivers comprehensive industrial solutions spanning renewable energy, waste
+          management, drilling operations, and vessel supplies. We partner with industry leaders to drive sustainable
+          growth and operational excellence.</p>
+        <div class="cta-group">
+          <a href="#services" class="primary-btn">Explore Our Services <i data-lucide="arrow-right"></i></a>
+          <a class="secondary-btn" onclick="toggleModal(true)"><i data-lucide="play-circle"></i> Watch Overview</a>
+        </div>
+        <!-- Stats -->
+        <div class="stats-container">
+          <div class="stat-item">
+            <h3>25+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Countries Served</p>
+          </div>
+          <div class="stat-item">
+            <h3>99%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <div class="slide-bg"
+        style="background-image: url('images/Renewable-Energy-Excellence.jpg');">
+      </div>
+      <div class="hero-content">
+        <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
+        <h2>Renewable Energy Excellence</h2>
+        <p class="subtitle">Solar, Wind & Energy Storage Solutions</p>
+        <p class="description">Strat-Logika delivers comprehensive industrial solutions spanning renewable energy, waste
+          management, drilling operations, and vessel supplies. We partner with industry leaders to drive sustainable
+          growth and operational excellence.</p>
+        <div class="cta-group">
+          <a href="#services" class="primary-btn">Explore Our Services <i data-lucide="arrow-right"></i></a>
+          <a class="secondary-btn" onclick="toggleModal(true)"><i data-lucide="play-circle"></i> Watch Overview</a>
+        </div>
+        <!-- Stats -->
+        <div class="stats-container">
+          <div class="stat-item">
+            <h3>25+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Countries Served</p>
+          </div>
+          <div class="stat-item">
+            <h3>99%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <div class="slide-bg"
+        style="background-image: url('images/Advanced-Drilling-Operations.jpg');">
+      </div>
+      <div class="hero-content">
+        <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
+        <h2>Advanced Drilling Operations</h2>
+        <p class="subtitle">Offshore & Onshore Expertise</p>
+        <p class="description">Strat-Logika delivers comprehensive industrial solutions spanning renewable energy, waste
+          management, drilling operations, and vessel supplies. We partner with industry leaders to drive sustainable
+          growth and operational excellence.</p>
+        <div class="cta-group">
+          <a href="#services" class="primary-btn">Explore Our Services <i data-lucide="arrow-right"></i></a>
+          <a class="secondary-btn" onclick="toggleModal(true)"><i data-lucide="play-circle"></i> Watch Overview</a>
+        </div>
+        <!-- Stats -->
+        <div class="stats-container">
+          <div class="stat-item">
+            <h3>25+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Countries Served</p>
+          </div>
+          <div class="stat-item">
+            <h3>99%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <div class="slide-bg"
+        style="background-image: url('images/Complete-Vessel-Supply-Solutions.jpg');">
+      </div>
+      <div class="hero-content">
+        <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
+        <h2>Complete Vessel Supply Solutions</h2>
+        <p class="subtitle">Marine Equipment & Logistics Support</p>
+        <p class="description">Strat-Logika delivers comprehensive industrial solutions spanning renewable energy, waste
+          management, drilling operations, and vessel supplies. We partner with industry leaders to drive sustainable
+          growth and operational excellence.</p>
+        <div class="cta-group">
+          <a href="#services" class="primary-btn">Explore Our Services <i data-lucide="arrow-right"></i></a>
+          <a class="secondary-btn" onclick="toggleModal(true)"><i data-lucide="play-circle"></i> Watch Overview</a>
+        </div>
+        <!-- Stats -->
+        <div class="stats-container">
+          <div class="stat-item">
+            <h3>25+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Countries Served</p>
+          </div>
+          <div class="stat-item">
+            <h3>99%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-text">SCROLL</div>
+
+    <!-- Controls -->
+    <div class="slider-nav">
+      <div class="nav-btn" id="prev-slide"><i data-lucide="chevron-left"></i></div>
+      <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div class="nav-btn" id="next-slide"><i data-lucide="chevron-right"></i></div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Services</span>
+        <h2 class="section-title">Comprehensive Industrial Solutions</h2>
+        <p class="section-subtitle">From renewable energy to marine operations, we deliver end-to-end solutions that
+          drive efficiency, sustainability, and growth for our clients.</p>
+      </div>
+
+      <div class="services-tabs">
+        <!-- Tab 1 -->
+        <div class="tab-btn active" onclick="openService('renewable')">
+          <div class="tab-icon"><i data-lucide="sun"></i></div>
+          <h4 class="tab-title">Renewable Energy</h4>
+          <p class="tab-desc">Clean energy solutions for a sustainable future</p>
+        </div>
+
+        <!-- Tab 2 -->
+        <div class="tab-btn" onclick="openService('waste')">
+          <div class="tab-icon"><i data-lucide="trash-2"></i></div>
+          <h4 class="tab-title">Waste Management</h4>
+          <p class="tab-desc">Sustainable waste solutions for industry</p>
+        </div>
+
+        <!-- Tab 3 -->
+        <div class="tab-btn" onclick="openService('drilling')">
+          <div class="tab-icon"><i data-lucide="drill"></i></div>
+          <h4 class="tab-title">Drilling Operations</h4>
+          <p class="tab-desc">Expert drilling services worldwide</p>
+        </div>
+
+        <!-- Tab 4 -->
+        <div class="tab-btn" onclick="openService('vessel')">
+          <div class="tab-icon"><i data-lucide="ship"></i></div>
+          <h4 class="tab-title">Vessel Supplies</h4>
+          <p class="tab-desc">Complete marine supply solutions</p>
+        </div>
+      </div>
+
+      <!-- Service Content: Renewable -->
+      <div class="service-content-wrapper active" id="renewable">
+        <div class="service-image-col">
+          <img src="images/Renewable-Energy-Excellence.jpg"
+            alt="Renewable Energy" class="service-img">
+          <div class="img-stats">
+            <div class="img-stat-item">
+              <h4>150+</h4>
+              <p>Projects</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>500MW</h4>
+              <p>Capacity</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>40%</h4>
+              <p>Savings</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-text-col">
+          <div class="service-heading">
+            <div class="service-heading-icon green"><i data-lucide="sun"></i></div>
+            <h3>Renewable Energy</h3>
+          </div>
+          <p class="service-details">We provide comprehensive renewable energy solutions including solar power systems,
+            wind energy installations, and energy storage solutions. Our team of experts designs, installs, and
+            maintains sustainable energy infrastructure for industrial and commercial clients worldwide.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Solar PV System Design & Installation
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Wind Turbine Solutions
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Battery Energy Storage Systems
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Grid Integration Services
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Energy Efficiency Audits
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Power Purchase Agreements
+            </div>
+          </div>
+
+          <div class="service-actions">
+            <a class="primary-btn" onclick="toggleModal(true)">Request Quote <i data-lucide="arrow-right"></i></a>
+            <a href="#" class="btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Content: Waste -->
+      <div class="service-content-wrapper" id="waste">
+        <div class="service-image-col">
+          <img src="images/Waste-Management.jpg"
+            alt="Waste Management" class="service-img">
+          <div class="img-stats">
+            <div class="img-stat-item">
+              <h4>1M+ tons</h4>
+              <p>Processed</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>75%</h4>
+              <p>recycled</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>200+</h4>
+              <p>clients</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-text-col">
+          <div class="service-heading">
+            <div class="service-heading-icon green"><i data-lucide="trash-2"></i></div>
+            <h3>Waste Management</h3>
+          </div>
+          <p class="service-details">Our waste management division offers complete solutions for industrial waste
+            processing, recycling, and disposal. We
+            help organizations minimize environmental impact while maximizing resource recovery through innovative
+            waste-to-energy
+            technologies.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Industrial Recycling
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Hazardous Waste Disposal
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Waste-to-Energy
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Compliance Auditing
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Site Remediation
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Circular Economy Plans
+            </div>
+          </div>
+
+          <div class="service-actions">
+            <a class="primary-btn" onclick="toggleModal(true)">Request Quote <i data-lucide="arrow-right"></i></a>
+            <a href="#" class="btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Content: Drilling -->
+      <div class="service-content-wrapper" id="drilling">
+        <div class="service-image-col">
+          <img src="images/Advanced-Drilling-Operations.jpg"
+            alt="Drilling Operations" class="service-img">
+          <div class="img-stats">
+            <div class="img-stat-item">
+              <h4>1,000+</h4>
+              <p>Wells</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>99.5%</h4>
+              <p>Uptime</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>Zero LTI</h4>
+              <p>Safety</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-text-col">
+          <div class="service-heading">
+            <div class="service-heading-icon orange"><i data-lucide="drill"></i></div>
+            <h3>Drilling Operations</h3>
+          </div>
+          <p class="service-details">Strat-Logika provides world-class drilling operations for offshore and onshore
+            projects. Our experienced teams utilize cutting-edge technology and adhere to the highest safety standards
+            to deliver efficient and reliable drilling services.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Offshore Drilling Operations
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Onshore Drilling Services
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Well Completion & Workover
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Drilling Equipment Supply
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Rig Management Services
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> HSE Compliance & Training
+            </div>
+          </div>
+
+          <div class="service-actions">
+            <a class="primary-btn" onclick="toggleModal(true)">Request Quote <i data-lucide="arrow-right"></i></a>
+            <a href="#" class="btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Content: Vessel -->
+      <div class="service-content-wrapper" id="vessel">
+        <div class="service-image-col">
+          <img src="images/Complete-Vessel-Supply-Solutions.jpg"
+            alt="Vessel Supplies" class="service-img">
+          <div class="img-stats">
+            <div class="img-stat-item">
+              <h4>500+</h4>
+              <p>Vessels</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>30+</h4>
+              <p>Ports</p>
+            </div>
+            <div class="img-stat-item">
+              <h4>24/7</h4>
+              <p>Delivery</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-text-col">
+          <div class="service-heading">
+            <div class="service-heading-icon blue"><i data-lucide="ship"></i></div>
+            <h3>Vessel Supplies</h3>
+          </div>
+          <p class="service-details">Our vessel supplies division delivers comprehensive marine equipment and logistics
+            support to offshore operations worldwide. From deck supplies to safety equipment, we ensure vessels are
+            fully equipped for optimal performance.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Marine Equipment Supply
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Deck & Engine Room Supplies
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Safety & Survival Equipment
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Provisions & Stores
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Technical Spares & Parts
+            </div>
+            <div class="feature-item">
+              <div class="check-icon"><i data-lucide="check"></i></div> Logistics & Delivery Services
+            </div>
+          </div>
+
+          <div class="service-actions">
+            <a class="primary-btn" onclick="toggleModal(true)">Request Quote <i data-lucide="arrow-right"></i></a>
+            <a href="#" class="btn-outline">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Explore our track record of successful projects across renewable energy, waste
+          management, drilling operations, and vessel supplies.</p>
+      </div>
+
+      <div class="filters-container">
+        <div class="filter-btn active" onclick="filterProjects('all')">All Projects</div>
+        <div class="filter-btn" onclick="filterProjects('renewable')">Renewable Energy</div>
+        <div class="filter-btn" onclick="filterProjects('waste')">Waste Management</div>
+        <div class="filter-btn" onclick="filterProjects('drilling')">Drilling Operations</div>
+        <div class="filter-btn" onclick="filterProjects('vessel')">Vessel Supplies</div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Renewable -->
+        <div class="project-card" data-category="renewable" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Renewable-Energy-Excellence.jpg"
+              alt="Solar Farm">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category">Renewable Energy</span>
+              <span class="tag-budget">$150M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Solar Farm Development</h3>
+            <p class="card-desc">200MW solar power plant installation with advanced tracking systems.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Abu Dhabi, UAE</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">200MW solar power plant installation with advanced tracking systems.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Renewable -->
+        <div class="project-card" data-category="renewable" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Wind-Energy-Installation.jpg"
+              alt="Wind Energy">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category">Renewable Energy</span>
+              <span class="tag-budget">$280M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Wind Energy Installation</h3>
+            <p class="card-desc">Offshore wind farm with 50 turbines generating 300MW.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> North Sea, UK</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Offshore wind farm with 50 turbines generating 300MW.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Waste -->
+        <div class="project-card" data-category="waste" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Industrial-Recycling-Facility.jpg"
+              alt="Recycling Facility">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category">Waste Management</span>
+              <span class="tag-budget">$85M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Industrial Recycling Facility</h3>
+            <p class="card-desc">State-of-the-art recycling plant processing 500,000 tons annually.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Rotterdam, Netherlands</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2023</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">State-of-the-art recycling plant processing 500,000 tons annually.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Waste -->
+        <div class="project-card" data-category="waste" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Waste-to-Energy-Plant.jpg"
+              alt="Waste-to-Energy">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category">Waste Management</span>
+              <span class="tag-budget">$120M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Waste-to-Energy Plant</h3>
+            <p class="card-desc">Converting municipal waste to clean energy for 100,000 homes.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Singapore</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2023</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Converting municipal waste to clean energy for 100,000 homes.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Drilling -->
+        <div class="project-card" data-category="drilling" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Advanced-Drilling-Operations.jpg"
+              alt="Deepwater Drilling">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category orange">Drilling Operations</span>
+              <span class="tag-budget">$200M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Deepwater Drilling Project</h3>
+            <p class="card-desc">Ultra-deepwater exploration drilling at 8,000ft depth.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Gulf of Mexico, USA</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Ultra-deepwater exploration drilling at 8,000ft depth.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Drilling -->
+        <div class="project-card" data-category="drilling" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Offshore-Platform-Operations.jpg"
+              alt="Offshore Platform">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category orange">Drilling Operations</span>
+              <span class="tag-budget">$180M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Offshore Platform Operations</h3>
+            <p class="card-desc">Full drilling operations management for 12 wells.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Campos Basin, Brazil</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2023</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Full drilling operations management for 12 wells.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: Drilling -->
+        <div class="project-card" data-category="drilling" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Drilling-Equipment-Supply.jpg"
+              alt="Offshore Platform">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category orange">Drilling Operations</span>
+              <span class="tag-budget">$45M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Drilling Equipment Supply</h3>
+            <p class="card-desc">Complete drilling equipment package for offshore operations.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Perth, Australia</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Complete drilling equipment package for offshore operations.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Vessel -->
+        <div class="project-card" data-category="vessel" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Complete-Vessel-Supply-Solutions.jpg"
+              alt="Fleet Supply">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category blue">Vessel Supplies</span>
+              <span class="tag-budget">$35M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Fleet Supply Contract</h3>
+            <p class="card-desc">Comprehensive supply services for 25 offshore support vessels.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Houston, USA</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Comprehensive supply services for 25 offshore support vessels.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: Vessel -->
+        <div class="project-card" data-category="vessel" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Marine-Logistics-Hub.jpg"
+              alt="Marine Logistics">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category blue">Vessel Supplies</span>
+              <span class="tag-budget">$25M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Marine Logistics Hub</h3>
+            <p class="card-desc">Establishing regional marine supply and logistics center.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Lagos, Nigeria</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2023</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Establishing regional marine supply and logistics center.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: Vessel -->
+        <div class="project-card" data-category="vessel" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Tugboat-Fleet-Services.jpg">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category blue">Vessel Supplies</span>
+              <span class="tag-budget">$18M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Tugboat Fleet Services</h3>
+            <p class="card-desc">Complete provisioning for harbor and offshore tug operations.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Dubai, UAE</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Complete provisioning for harbor and offshore tug operations.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 11: Renewable -->
+        <div class="project-card" data-category="renewable" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Rooftop-Solar-Program.jpg"
+              alt="Wind Energy">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category">Renewable Energy</span>
+              <span class="tag-budget">$40M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Rooftop Solar Program</h3>
+            <p class="card-desc">Industrial rooftop solar installations across 50 facilities.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Mumbai, India</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2023</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Industrial rooftop solar installations across 50 facilities.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Waste -->
+        <div class="project-card" data-category="waste" onclick="toggleCard(this)">
+          <div class="card-image-wrap">
+            <img src="images/Waste-Management.jpg"
+              alt="Waste-to-Energy">
+            <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+            <div class="card-tags">
+              <span class="tag-category">Waste Management</span>
+              <span class="tag-budget">$65M</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>Hazardous Waste Treatment</h3>
+            <p class="card-desc">Specialized facility for industrial hazardous waste processing.</p>
+            <div class="card-meta">
+              <div class="meta-item"><i data-lucide="map-pin"></i> Johannesburg, South Africa</div>
+              <div class="meta-item"><i data-lucide="calendar"></i> 2024</div>
+            </div>
+            <div class="card-expanded-content">
+              <p class="expanded-text">Specialized facility for industrial hazardous waste processing.</p>
+              <a href="#" class="view-case-study">View Case Study <i data-lucide="arrow-up-right"
+                  style="width: 14px;"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-all-container">
+        <div class="view-all-btn">
+          <i data-lucide="filter"></i> View All Projects
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
+  <section class="industries-section" id="industries">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Industries We Serve</span>
+        <h2 class="section-title">Trusted Across Sectors</h2>
+        <p class="section-subtitle">From energy giants to municipal governments, we partner with organizations across
+          diverse industries to deliver tailored industrial solutions.</p>
+      </div>
+
+      <div class="industries-grid">
+        <!-- Industry 1 -->
+        <a class="industry-card" data-color="orange">
+          <div class="industry-icon-box"><i data-lucide="factory"></i></div>
+          <h4 class="industry-title">Oil & Gas</h4>
+          <p class="industry-desc">Comprehensive solutions for upstream, midstream, and downstream operations</p>
+        </a>
+
+        <!-- Industry 2 -->
+        <a class="industry-card" data-color="green">
+          <div class="industry-icon-box"><i data-lucide="zap"></i></div>
+          <h4 class="industry-title">Power Generation</h4>
+          <p class="industry-desc">Supporting conventional and renewable power plants worldwide</p>
+        </a>
+
+        <!-- Industry 3 -->
+        <a class="industry-card" data-color="orange">
+          <div class="industry-icon-box"><i data-lucide="building-2"></i></div>
+          <h4 class="industry-title">Municipalities</h4>
+          <p class="industry-desc">Waste management and sustainable energy for local governments</p>
+        </a>
+
+        <!-- Industry 4 -->
+        <a class="industry-card" data-color="blue">
+          <div class="industry-icon-box"><i data-lucide="anchor"></i></div>
+          <h4 class="industry-title">Marine & Offshore</h4>
+          <p class="industry-desc">Complete vessel supplies and offshore support services</p>
+        </a>
+
+        <!-- Industry 5 -->
+        <a class="industry-card" data-color="orange">
+          <div class="industry-icon-box"><i data-lucide="mountain"></i></div>
+          <h4 class="industry-title">Mining</h4>
+          <p class="industry-desc">Drilling services and equipment for mining operations</p>
+        </a>
+
+        <!-- Industry 6 -->
+        <a class="industry-card" data-color="blue">
+          <div class="industry-icon-box"><i data-lucide="droplet"></i></div>
+          <h4 class="industry-title">Water & Utilities</h4>
+          <p class="industry-desc">Infrastructure solutions for water treatment and distribution</p>
+        </a>
+
+        <!-- Industry 7 -->
+        <a class="industry-card" data-color="orange">
+          <div class="industry-icon-box"><i data-lucide="truck"></i></div>
+          <h4 class="industry-title">Logistics</h4>
+          <p class="industry-desc">Supply chain and logistics support for industrial operations</p>
+        </a>
+
+        <!-- Industry 8 -->
+        <a class="industry-card" data-color="green">
+          <div class="industry-icon-box"><i data-lucide="leaf"></i></div>
+          <h4 class="industry-title">Environmental</h4>
+          <p class="industry-desc">Sustainable solutions for environmental compliance and remediation</p>
+        </a>
+
+        <!-- Industry 9 -->
+        <a class="industry-card" data-color="orange">
+          <div class="industry-icon-box"><i data-lucide="hard-hat"></i></div>
+          <h4 class="industry-title">Construction</h4>
+          <p class="industry-desc">Equipment and services for major construction projects</p>
+        </a>
+
+        <!-- Industry 10 -->
+        <a class="industry-card" data-color="green">
+          <div class="industry-icon-box"><i data-lucide="wind"></i></div>
+          <h4 class="industry-title">Renewable Energy</h4>
+          <p class="industry-desc">Solar, wind, and energy storage for clean energy developers</p>
+        </a>
+      </div>
+
+      <div class="industry-cta-banner">
+        <div class="banner-overlay-grad">
+          <div class="left-grad"></div>
+          <div class="right-grad"></div>
+        </div>
+        <div class="banner-content">
+          <h3>Don't see your industry?</h3>
+          <p>Our expertise extends beyond these sectors. Contact us to discuss how we can support your specific
+            industrial requirements.</p>
+        </div>
+        <a class="banner-btn" onclick="toggleModal(true)">Discuss Your Needs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Client Testimonials</span>
+        <h2 class="section-title">Trusted by Industry Leaders</h2>
+        <p class="section-subtitle">Hear from our clients about their experience working with Strat-Logika on critical
+          industrial projects around the world.</p>
+      </div>
+
+      <div class="testimonial-card-container">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-slide active">
+          <div class="quote-icon"><i data-lucide="quote"></i></div>
+          <div class="rating-stars">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"Strat-Logika's renewable energy team delivered our 200MW solar project ahead of
+            schedule and under budget. Their expertise and professionalism exceeded our expectations."</p>
+          <div class="author-info">
+            <h4>Ahmed Al-Rashid</h4>
+            <p>VP Operations, Gulf Energy Corporation</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-slide">
+          <div class="quote-icon"><i data-lucide="quote"></i></div>
+          <div class="rating-stars">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"The waste management solutions provided by Strat-Logika transformed our
+            facility's environmental footprint. Highly recommended for sustainable industrial operations."</p>
+          <div class="author-info">
+            <h4>Sarah Jenkins</h4>
+            <p>Sustainability Director, EcoTech Solutions</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-slide">
+          <div class="quote-icon"><i data-lucide="quote"></i></div>
+          <div class="rating-stars">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"Exceptional service in offshore drilling support. Their safety record and
+            operational efficiency are unmatched in the industry."</p>
+          <div class="author-info">
+            <h4>Michael Chen</h4>
+            <p>Regional Manager, Pacific Marine Drilling</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-slide">
+          <div class="quote-icon"><i data-lucide="quote"></i></div>
+          <div class="rating-stars">
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+              data-lucide="star"></i>
+          </div>
+          <p class="testimonial-text">"The waste management solutions provided by Strat-Logika transformed our
+            facility's environmental footprint. Highly recommended for sustainable industrial operations."</p>
+          <div class="author-info">
+            <h4>Sarah Jenkins</h4>
+            <p>Sustainability Director, EcoTech Solutions</p>
+          </div>
+        </div>
+
+        <div class="testimonial-nav">
+          <div class="t-nav-btn" onclick="prevTestimonial()"><i data-lucide="chevron-left"></i></div>
+          <div class="t-nav-btn" onclick="nextTestimonial()"><i data-lucide="chevron-right"></i></div>
+        </div>
+
+        <div class="t-dots">
+          <div class="t-dot active" onclick="showTestimonial(0)"></div>
+          <div class="t-dot" onclick="showTestimonial(1)"></div>
+          <div class="t-dot" onclick="showTestimonial(2)"></div>
+          <div class="t-dot" onclick="showTestimonial(3)"></div>
+        </div>
+      </div>
+
+      <div class="client-logos-section">
+        <p class="logo-strip-title">Trusted by leading companies worldwide</p>
+        <div class="logo-strip">
+          <span class="client-logo">Shell</span>
+          <span class="client-logo">BP</span>
+          <span class="client-logo">Chevron</span>
+          <span class="client-logo">TotalEnergies</span>
+          <span class="client-logo">Maersk</span>
+          <span class="client-logo">Siemens</span>
+          <span class="client-logo">Vestas</span>
+          <span class="client-logo">Schlumberger</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-intro-grid">
+        <div class="about-text-content">
+          <h4>About Strat-Logika</h4>
+          <h2>Driving Industrial Excellence Since 2006</h2>
+          <p>For over 20 years, Strat-Logika has been at the forefront of industrial solutions, serving clients across
+            the energy, environmental, and marine sectors. Our commitment to innovation, safety, and sustainability has
+            made us a trusted partner for industry leaders worldwide.</p>
+          <p>Headquartered in Scotland with operations spanning 50+ countries, we combine global reach with local
+            expertise to deliver tailored solutions that meet the unique challenges of each project.</p>
+
+          <div class="certifications-list">
+            <div class="cert-item">
+              <i data-lucide="circle-check-big"></i>
+              <div class="cert-cont">
+                <h3>ISO 9001:2015</h3>
+                <p>Quality Management</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <i data-lucide="circle-check-big"></i>
+              <div class="cert-cont">
+                <h3>ISO 14001:2015</h3>
+                <p>Environmental Management</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <i data-lucide="circle-check-big"></i>
+              <div class="cert-cont">
+                <h3>ISO 45001:2018</h3>
+                <p>Occupational Health & Safety</p>
+              </div>
+            </div>
+            <div class="cert-item">
+              <i data-lucide="circle-check-big"></i>
+              <div class="cert-cont">
+                <h3>API Q1</h3>
+                <p>Oil & Gas Quality</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stats-card">
+          <div class="banner-overlay-grad">
+            <div class="right-grad grad-stat"></div>
+          </div>
+          <div class="stats-grid-about">
+            <div class="about-stat">
+              <h3>25+</h3>
+              <p>Years of Excellence</p>
+            </div>
+            <div class="about-stat">
+              <h3>50+</h3>
+              <p>Countries Served</p>
+            </div>
+            <div class="about-stat">
+              <h3>500+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="about-stat">
+              <h3>2,000+</h3>
+              <p>Team Members</p>
+            </div>
+          </div>
+          <a class="about-partner-btn" onclick="toggleModal(true)">Partner With Us</a>
+        </div>
+      </div>
+
+      <div class="core-values-header">
+        <h3>Our Core Values</h3>
+        <p>These principles guide everything we do, from project execution to client relationships.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"><i data-lucide="shield"></i></div>
+          <h4>Safety First</h4>
+          <p>Zero-incident culture with rigorous HSE standards across all operations.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i data-lucide="award"></i></div>
+          <h4>Excellence</h4>
+          <p>Delivering superior quality and performance in every project.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i data-lucide="users"></i></div>
+          <h4>Partnership</h4>
+          <p>Building long-term relationships through trust and collaboration.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i data-lucide="globe"></i></div>
+          <h4>Sustainability</h4>
+          <p>Committed to environmental stewardship and sustainable practices.</p>
+        </div>
+      </div>
+
+      <div class="team-header" id="our-team">
+        <h3>Leadership Team</h3>
+        <p>Our experienced leadership brings decades of industry expertise to drive innovation and growth.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+          <div class="team-image-wrap">
+            <img src="images/JO-Modupe-Joseph.jpg"
+              alt="JO Modupe-Joseph">
+            <div class="team-social-overlay">
+              <div class="social-btn"><i data-lucide="linkedin"></i></div>
+              <div class="social-btn"><i data-lucide="mail"></i></div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>JO Modupe-Joseph</h4>
+            <span class="team-role">Chief Executive Officer</span>
+            <p class="team-bio">25+ years in energy and industrial sectors.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+          <div class="team-image-wrap">
+            <img src="images/Sarah-Mitchell.jpg"
+              alt="Sarah Mitchell">
+            <div class="team-social-overlay">
+              <div class="social-btn"><i data-lucide="linkedin"></i></div>
+              <div class="social-btn"><i data-lucide="mail"></i></div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>Sarah Mitchell</h4>
+            <span class="team-role">Chief Operations Officer</span>
+            <p class="team-bio">Expert in Offshore / Subsea Operations.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+          <div class="team-image-wrap">
+            <img src="images/male-avater.jpg"
+              alt="Stuart Philip">
+            <div class="team-social-overlay">
+              <div class="social-btn"><i data-lucide="linkedin"></i></div>
+              <div class="social-btn"><i data-lucide="mail"></i></div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>Stuart Philip</h4>
+            <span class="team-role">VP Renewable Energy</span>
+            <p class="team-bio">Led 500MW+ solar and wind projects globally.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card">
+          <div class="team-image-wrap">
+            <img src="images/Emily-Thompson.jpg"
+              alt="Emily Thompson">
+            <div class="team-social-overlay">
+              <div class="social-btn"><i data-lucide="linkedin"></i></div>
+              <div class="social-btn"><i data-lucide="mail"></i></div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>Emily Thompson</h4>
+            <span class="team-role">VP Waste Management</span>
+            <p class="team-bio">Environmental engineer with 15+ years experience.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="team-card">
+          <div class="team-image-wrap">
+            <img src="images/male-avater.jpg"
+              alt="B Joseph Joseph">
+            <div class="team-social-overlay">
+              <div class="social-btn"><i data-lucide="linkedin"></i></div>
+              <div class="social-btn"><i data-lucide="mail"></i></div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>B Joseph Joseph</h4>
+            <span class="team-role">VP Drilling Operations</span>
+            <p class="team-bio">Managed many Wells across EMEA.</p>
+          </div>
+        </div>
+
+        <!-- Team Member 6 -->
+        <div class="team-card">
+          <div class="team-image-wrap">
+            <img src="images/Lisa-Anderson.jpg"
+              alt="Lisa Anderson">
+            <div class="team-social-overlay">
+              <div class="social-btn"><i data-lucide="linkedin"></i></div>
+              <div class="social-btn"><i data-lucide="mail"></i></div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>Lisa Anderson</h4>
+            <span class="team-role">VP Marine & Logistics</span>
+            <p class="team-bio">Expert in maritime supply chain management.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Ready to Get Started Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="banner-overlay-grad">
+        <div class="cta-left-grad"></div>
+        <div class="cta-right-grad"></div>
+      </div>
+      <div class="cta-header">
+        <span class="cta-label">Ready to Get Started?</span>
+        <h2>Let's Build Something Great Together</h2>
+        <p>Whether you need renewable energy solutions, waste management services, drilling expertise, or vessel
+          supplies, our team is ready to help.</p>
+      </div>
+
+      <div class="cta-grid">
+        <!-- Request a Quote -->
+        <div class="cta-card request">
+          <div class="cta-icon-box"><i data-lucide="phone"></i></div>
+          <h3>Request a Quote</h3>
+          <p>Get a customized proposal for your project requirements.</p>
+          <a class="cta-link" onclick="toggleModal(true)">Contact Sales <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- Download Brochure -->
+        <div class="cta-card brochure">
+          <div class="cta-icon-box"><i data-lucide="file-text"></i></div>
+          <h3>Download Brochure</h3>
+          <p>Learn more about our services and capabilities.</p>
+          <a href="#" class="cta-link">Get PDF <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- Schedule a Call -->
+        <div class="cta-card schedule">
+          <div class="cta-icon-box"><i data-lucide="calendar"></i></div>
+          <h3>Schedule a Call</h3>
+          <p>Book a consultation with our industry experts.</p>
+          <a class="cta-link" onclick="toggleModal(true)">Book Now <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="cta-footer-certs">
+        <div class="cta-cert-item">
+          <h4>ISO 9001</h4>
+          <p>Quality Certified</p>
+        </div>
+        <div class="cta-cert-item">
+          <h4>ISO 14001</h4>
+          <p>Environmental</p>
+        </div>
+        <div class="cta-cert-item">
+          <h4>ISO 45001</h4>
+          <p>Health & Safety</p>
+        </div>
+        <div class="cta-cert-item">
+          <h4>API Q1</h4>
+          <p>Oil & Gas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <!-- Newsletter Bar -->
+    <div class="newsletter-bar">
+      <div class="container">
+        <div class="newsletter-content">
+          <div class="newsletter-text">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter for industry insights and company updates.</p>
+          </div>
+          <form class="newsletter-form" onsubmit="event.preventDefault()">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe <i data-lucide="arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-main">
+        <!-- Brand Column -->
+        <div class="footer-col brand-col">
+          <a href="#" class="logo footer-logo">
+            <img src="images/stratlogika-logo.png" alt="">
+          </a>
+          <p class="footer-desc">Delivering comprehensive industrial solutions across renewable energy, waste
+            management, drilling operations, and vessel supplies since 2006.</p>
+
+          <div class="footer-contact">
+            <a href="tel:+447419293015"><i data-lucide="phone"></i> +44 74192 93015</a>
+            <a href="https://wa.me/+447550404652"><i data-lucide="message-circle"></i> +44 75504 04652</a>
+            <a href="mailto:info@strat-logika.com"><i data-lucide="mail"></i> info@strat-logika.com</a>
+          </div>
+
+          <div class="footer-social">
+            <a href="#"><i data-lucide="linkedin"></i></a>
+            <a href="#"><i data-lucide="twitter"></i></a>
+            <a href="#"><i data-lucide="facebook"></i></a>
+            <a href="#"><i data-lucide="instagram"></i></a>
+            <a href="#"><i data-lucide="youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Links Column: Services -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services" onclick="openService('renewable')">Renewable Energy</a></li>
+            <li><a href="#services" onclick="openService('waste')">Waste Management</a></li>
+            <li><a href="#services" onclick="openService('drilling')">Drilling Operations</a></li>
+            <li><a href="#services" onclick="openService('vessel')">Vessel Supplies</a></li>
+            <li><a href="#services">Consulting Services</a></li>
+            <li><a href="#services">Equipment Supply</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#our-team">Our Team</a></li>
+            <li><a href="#about">Careers</a></li>
+            <li><a href="#">News & Media</a></li>
+            <li><a href="#about">Sustainability</a></li>
+            <li><a href="#about">Certifications</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#projects">Case Studies</a></li>
+            <li><a href="#projects">Technical Papers</a></li>
+            <li><a href="#industries">Industry Insights</a></li>
+            <li><a href="#about">FAQs</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Links Column: Global Offices -->
+        <div class="footer-col offices-col">
+          <h4>Global Offices</h4>
+          <ul class="office-list">
+            <li>
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Aberdeen, UK</strong>
+                <span>Unit 1, South Wellheads Industrial Centre<br>Wellheads Industrial Crescent, Dyce<br>
+                Aberdeen AB21 7GA</span>
+              </div>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>London, UK</strong>
+                <span>45 Canary Wharf, E14 5AB</span>
+              </div>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Dubai, UAE</strong>
+                <span>Business Bay, Tower 3</span>
+              </div>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Singapore, SG</strong>
+                <span>Marina Bay Financial Centre</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Strat-Logika. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

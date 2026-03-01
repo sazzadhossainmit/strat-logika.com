@@ -63,5 +63,5 @@ This is a static website deployed on:
 
 ## Live Website
 
-[https://strat-logika.deshiworker.com/](https://strat-logika.deshiworker.com/)
+[www.strat-logika.com](https://www.strat-logika.com/)
 

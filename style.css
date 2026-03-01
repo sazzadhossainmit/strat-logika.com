@@ -1706,7 +1706,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 .value-card {
@@ -1757,7 +1757,7 @@ nav {
 .team-header {
   text-align: center;
   margin-bottom: 50px;
-  /* display: none; */
+  display: none;
 }
 
 .team-header h3 {
@@ -1778,7 +1778,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  /* display: none; */
+  display: none;
 }
 
 .team-card {

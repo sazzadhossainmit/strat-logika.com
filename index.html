@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="style.css">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </head>
 
 <body>
@@ -125,7 +126,9 @@
   <div class="modal-overlay" id="contact-modal" onclick="closeOnOverlay(event)">
 
     <div class="modal-container">
-      <button class="close-modal" onclick="toggleModal(false)"><i data-lucide="x"></i></button>
+      <button type="button" class="close-modal" onclick="window.toggleContactModal(false)">
+        <i data-lucide="x"></i>
+      </button>
       <!-- Sidebar -->
       <aside class="modal-sidebar">
         <div class="sidebar-header">
@@ -159,7 +162,8 @@
             <div class="info-icon"><i data-lucide="map-pin"></i></div>
             <div class="info-text">
               <strong>Headquarters</strong>
-              <a href="https://maps.app.goo.gl/83mE48qD3ak5cxag8" target="_blank"><span>Unit 1, South Wellheads Industrial Centre<br> Wellheads Industrial Crescent, Dyce<br> Aberdeen AB21 7GA</span></a>
+              <a href="https://maps.app.goo.gl/83mE48qD3ak5cxag8" target="_blank"><span>Unit 1, South Wellheads
+                  Industrial Centre<br> Wellheads Industrial Crescent, Dyce<br> Aberdeen AB21 7GA</span></a>
             </div>
           </div>
           <div class="info-item">
@@ -232,6 +236,10 @@
               required></textarea>
           </div>
 
+          <div class="form-group full">
+            <div id="turnstile-widget"></div>
+          </div>
+
           <button type="submit" class="submit-btn">
             <i data-lucide="send"></i> Send Message
           </button>
@@ -248,8 +256,7 @@
   <section class="hero">
     <!-- Slide 1 -->
     <div class="slide active">
-      <div class="slide-bg"
-        style="background-image: url('images/Powering-Sustainable-Industrial-Solutions.jpg');">
+      <div class="slide-bg" style="background-image: url('images/Powering-Sustainable-Industrial-Solutions.jpg');">
       </div>
       <div class="hero-content">
         <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
@@ -286,8 +293,7 @@
 
     <!-- Slide 2 -->
     <div class="slide">
-      <div class="slide-bg"
-        style="background-image: url('images/Renewable-Energy-Excellence.jpg');">
+      <div class="slide-bg" style="background-image: url('images/Renewable-Energy-Excellence.jpg');">
       </div>
       <div class="hero-content">
         <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
@@ -324,8 +330,7 @@
 
     <!-- Slide 3 -->
     <div class="slide">
-      <div class="slide-bg"
-        style="background-image: url('images/Advanced-Drilling-Operations.jpg');">
+      <div class="slide-bg" style="background-image: url('images/Advanced-Drilling-Operations.jpg');">
       </div>
       <div class="hero-content">
         <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
@@ -362,8 +367,7 @@
 
     <!-- Slide 4 -->
     <div class="slide">
-      <div class="slide-bg"
-        style="background-image: url('images/Complete-Vessel-Supply-Solutions.jpg');">
+      <div class="slide-bg" style="background-image: url('images/Complete-Vessel-Supply-Solutions.jpg');">
       </div>
       <div class="hero-content">
         <div class="badge"><span></span> Leading Industrial Solutions Provider</div>
@@ -456,8 +460,7 @@
       <!-- Service Content: Renewable -->
       <div class="service-content-wrapper active" id="renewable">
         <div class="service-image-col">
-          <img src="images/Renewable-Energy-Excellence.jpg"
-            alt="Renewable Energy" class="service-img">
+          <img src="images/Renewable-Energy-Excellence.jpg" alt="Renewable Energy" class="service-img">
           <div class="img-stats">
             <div class="img-stat-item">
               <h4>150+</h4>
@@ -513,8 +516,7 @@
       <!-- Service Content: Waste -->
       <div class="service-content-wrapper" id="waste">
         <div class="service-image-col">
-          <img src="images/Waste-Management.jpg"
-            alt="Waste Management" class="service-img">
+          <img src="images/Waste-Management.jpg" alt="Waste Management" class="service-img">
           <div class="img-stats">
             <div class="img-stat-item">
               <h4>1M+ tons</h4>
@@ -572,8 +574,7 @@
       <!-- Service Content: Drilling -->
       <div class="service-content-wrapper" id="drilling">
         <div class="service-image-col">
-          <img src="images/Advanced-Drilling-Operations.jpg"
-            alt="Drilling Operations" class="service-img">
+          <img src="images/Advanced-Drilling-Operations.jpg" alt="Drilling Operations" class="service-img">
           <div class="img-stats">
             <div class="img-stat-item">
               <h4>1,000+</h4>
@@ -629,8 +630,7 @@
       <!-- Service Content: Vessel -->
       <div class="service-content-wrapper" id="vessel">
         <div class="service-image-col">
-          <img src="images/Complete-Vessel-Supply-Solutions.jpg"
-            alt="Vessel Supplies" class="service-img">
+          <img src="images/Complete-Vessel-Supply-Solutions.jpg" alt="Vessel Supplies" class="service-img">
           <div class="img-stats">
             <div class="img-stat-item">
               <h4>500+</h4>
@@ -708,8 +708,7 @@
         <!-- Project 1: Renewable -->
         <div class="project-card" data-category="renewable" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Renewable-Energy-Excellence.jpg"
-              alt="Solar Farm">
+            <img src="images/Renewable-Energy-Excellence.jpg" alt="Solar Farm">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category">Renewable Energy</span>
@@ -734,8 +733,7 @@
         <!-- Project 2: Renewable -->
         <div class="project-card" data-category="renewable" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Wind-Energy-Installation.jpg"
-              alt="Wind Energy">
+            <img src="images/Wind-Energy-Installation.jpg" alt="Wind Energy">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category">Renewable Energy</span>
@@ -760,8 +758,7 @@
         <!-- Project 3: Waste -->
         <div class="project-card" data-category="waste" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Industrial-Recycling-Facility.jpg"
-              alt="Recycling Facility">
+            <img src="images/Industrial-Recycling-Facility.jpg" alt="Recycling Facility">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category">Waste Management</span>
@@ -786,8 +783,7 @@
         <!-- Project 4: Waste -->
         <div class="project-card" data-category="waste" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Waste-to-Energy-Plant.jpg"
-              alt="Waste-to-Energy">
+            <img src="images/Waste-to-Energy-Plant.jpg" alt="Waste-to-Energy">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category">Waste Management</span>
@@ -812,8 +808,7 @@
         <!-- Project 5: Drilling -->
         <div class="project-card" data-category="drilling" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Advanced-Drilling-Operations.jpg"
-              alt="Deepwater Drilling">
+            <img src="images/Advanced-Drilling-Operations.jpg" alt="Deepwater Drilling">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category orange">Drilling Operations</span>
@@ -838,8 +833,7 @@
         <!-- Project 6: Drilling -->
         <div class="project-card" data-category="drilling" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Offshore-Platform-Operations.jpg"
-              alt="Offshore Platform">
+            <img src="images/Offshore-Platform-Operations.jpg" alt="Offshore Platform">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category orange">Drilling Operations</span>
@@ -864,8 +858,7 @@
         <!-- Project 7: Drilling -->
         <div class="project-card" data-category="drilling" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Drilling-Equipment-Supply.jpg"
-              alt="Offshore Platform">
+            <img src="images/Drilling-Equipment-Supply.jpg" alt="Offshore Platform">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category orange">Drilling Operations</span>
@@ -890,8 +883,7 @@
         <!-- Project 8: Vessel -->
         <div class="project-card" data-category="vessel" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Complete-Vessel-Supply-Solutions.jpg"
-              alt="Fleet Supply">
+            <img src="images/Complete-Vessel-Supply-Solutions.jpg" alt="Fleet Supply">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category blue">Vessel Supplies</span>
@@ -916,8 +908,7 @@
         <!-- Project 9: Vessel -->
         <div class="project-card" data-category="vessel" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Marine-Logistics-Hub.jpg"
-              alt="Marine Logistics">
+            <img src="images/Marine-Logistics-Hub.jpg" alt="Marine Logistics">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category blue">Vessel Supplies</span>
@@ -967,8 +958,7 @@
         <!-- Project 11: Renewable -->
         <div class="project-card" data-category="renewable" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Rooftop-Solar-Program.jpg"
-              alt="Wind Energy">
+            <img src="images/Rooftop-Solar-Program.jpg" alt="Wind Energy">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category">Renewable Energy</span>
@@ -993,8 +983,7 @@
         <!-- Project 4: Waste -->
         <div class="project-card" data-category="waste" onclick="toggleCard(this)">
           <div class="card-image-wrap">
-            <img src="images/Waste-Management.jpg"
-              alt="Waste-to-Energy">
+            <img src="images/Waste-Management.jpg" alt="Waste-to-Energy">
             <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
             <div class="card-tags">
               <span class="tag-category">Waste Management</span>
@@ -1330,8 +1319,7 @@
         <!-- Team Member 1 -->
         <div class="team-card">
           <div class="team-image-wrap">
-            <img src="images/JO-Modupe-Joseph.jpg"
-              alt="JO Modupe-Joseph">
+            <img src="images/JO-Modupe-Joseph.jpg" alt="JO Modupe-Joseph">
             <div class="team-social-overlay">
               <div class="social-btn"><i data-lucide="linkedin"></i></div>
               <div class="social-btn"><i data-lucide="mail"></i></div>
@@ -1347,8 +1335,7 @@
         <!-- Team Member 2 -->
         <div class="team-card">
           <div class="team-image-wrap">
-            <img src="images/Sarah-Mitchell.jpg"
-              alt="Sarah Mitchell">
+            <img src="images/Sarah-Mitchell.jpg" alt="Sarah Mitchell">
             <div class="team-social-overlay">
               <div class="social-btn"><i data-lucide="linkedin"></i></div>
               <div class="social-btn"><i data-lucide="mail"></i></div>
@@ -1364,8 +1351,7 @@
         <!-- Team Member 3 -->
         <div class="team-card">
           <div class="team-image-wrap">
-            <img src="images/male-avater.jpg"
-              alt="Stuart Philip">
+            <img src="images/male-avater.jpg" alt="Stuart Philip">
             <div class="team-social-overlay">
               <div class="social-btn"><i data-lucide="linkedin"></i></div>
               <div class="social-btn"><i data-lucide="mail"></i></div>
@@ -1381,8 +1367,7 @@
         <!-- Team Member 4 -->
         <div class="team-card">
           <div class="team-image-wrap">
-            <img src="images/Emily-Thompson.jpg"
-              alt="Emily Thompson">
+            <img src="images/Emily-Thompson.jpg" alt="Emily Thompson">
             <div class="team-social-overlay">
               <div class="social-btn"><i data-lucide="linkedin"></i></div>
               <div class="social-btn"><i data-lucide="mail"></i></div>
@@ -1398,8 +1383,7 @@
         <!-- Team Member 5 -->
         <div class="team-card">
           <div class="team-image-wrap">
-            <img src="images/male-avater.jpg"
-              alt="B Joseph Joseph">
+            <img src="images/male-avater.jpg" alt="B Joseph Joseph">
             <div class="team-social-overlay">
               <div class="social-btn"><i data-lucide="linkedin"></i></div>
               <div class="social-btn"><i data-lucide="mail"></i></div>
@@ -1415,8 +1399,7 @@
         <!-- Team Member 6 -->
         <div class="team-card">
           <div class="team-image-wrap">
-            <img src="images/Lisa-Anderson.jpg"
-              alt="Lisa Anderson">
+            <img src="images/Lisa-Anderson.jpg" alt="Lisa Anderson">
             <div class="team-social-overlay">
               <div class="social-btn"><i data-lucide="linkedin"></i></div>
               <div class="social-btn"><i data-lucide="mail"></i></div>
@@ -1584,7 +1567,7 @@
               <div>
                 <strong>Aberdeen, UK</strong>
                 <span>Unit 1, South Wellheads Industrial Centre<br>Wellheads Industrial Crescent, Dyce<br>
-                Aberdeen AB21 7GA</span>
+                  Aberdeen AB21 7GA</span>
               </div>
             </li>
             <li>
